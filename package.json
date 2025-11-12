@@ -10,9 +10,9 @@
     "react-scripts": "^5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "cd client ; npm install --no-audit --no-fund ; npm run --prefix client build ; npx serve -s client/build",
+    "build": "npm run --prefix client build",
+    "test": "npm run --prefix client test",
+    "eject": "npm run --prefix client eject"
   }
 }
