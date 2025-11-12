@@ -1,0 +1,20 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff6f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  color: #ff5fa2;
+}
+
+button {
+  background-color: #93e9be;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
