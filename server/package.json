@@ -2,6 +2,7 @@
   "name": "hair-by-deeh-server",
   "version": "1.0.0",
   "description": "Backend server for Hair by Deeh booking and payments",
+  "type": "module",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
