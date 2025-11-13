@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import CalendarView from "../components/CalendarView";
+import AdminBookingForm from "../components/AdminBookingForm";
+import BookingsList from "../components/BookingsList";
 
 export default function AdminDashboard() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [email, setEmail] = useState("");
+  const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
     const token = localStorage.getItem("adminToken");
@@ -23,6 +26,10 @@ export default function AdminDashboard() {
     window.location.href = "/";
   };
 
+  const refreshBookings = () => {
+    setRefreshKey((prev) => prev + 1);
+  };
+
   if (!isLoggedIn) {
     return <div className="admin-dashboard"><p>Redirecting to login...</p></div>;
   }
@@ -34,7 +41,11 @@ export default function AdminDashboard() {
         <p>Welcome, {email}</p>
         <button onClick={handleLogout} className="logout-btn">Logout</button>
       </div>
-      <CalendarView />
+      <div className="admin-content">
+        <CalendarView key={refreshKey} />
+        <AdminBookingForm />
+        <BookingsList key={refreshKey} />
+      </div>
     </div>
   );
 }
